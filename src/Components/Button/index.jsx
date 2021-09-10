@@ -17,8 +17,8 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-    color: 'red',
-    backgroundColor: 'white',
+    color: '#f4f9f9',
+    backgroundColor: '#006162',
     text: 'Submit'
 }
 
