@@ -1,16 +1,16 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const WrapperButton = styled.button`
   display: inline-block;
-  width: 276px;
-  height: 63px;
-  background-color: ${p => p.backgroundColor};
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+  background-color: ${({ backgroundColor }) => backgroundColor};
   margin: 1em;
   padding: 0.25em 1em;
   border-radius: 8px;
   cursor: pointer;
   border: none;
-  color: ${p => p.color};
+  color: ${({ color }) => color};
   font-style: normal;
   font-weight: 500;
   font-size: 1.4em;
@@ -23,4 +23,4 @@ export const WrapperButton = styled.button`
     -moz-box-shadow: 0px 0px 3px rgba(75, 73, 73);
     box-shadow: 0px 0px 3px rgb(75, 73, 73);
   }
-`
+`;

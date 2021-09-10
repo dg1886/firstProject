@@ -1,14 +1,13 @@
-import React from "react";
+import React from 'react';
 import './App.css';
-import RegistrationForm from "./Components/RegistrationForm/Form";
-
+import RegistrationForm from './Components/RegistrationForm/Form';
 
 function App() {
-    return (
-        <div className="App">
-            <RegistrationForm/>
-        </div>
-    );
+  return (
+    <div className="App">
+      <RegistrationForm />
+    </div>
+  );
 }
 
 export default App;

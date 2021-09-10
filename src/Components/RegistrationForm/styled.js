@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const FormPageWrapper = styled.div`
   width: 100%;
@@ -8,7 +8,7 @@ export const FormPageWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const FormAreaWrapper = styled.div`
   height: 80%;
@@ -20,5 +20,4 @@ export const FormAreaWrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-`
-
+`;

@@ -1,17 +1,24 @@
-import React from 'react'
-import {WrapperInput} from "./styled";
-import {string} from 'prop-types'
+import React from 'react';
+import { string } from 'prop-types';
+import { WrapperInput } from './styled';
 
-
-export const Input = ({type, placeholder}) => {
-    return <WrapperInput type={type} placeholder={placeholder}/>
-}
+const Input = ({ type, placeholder, width }) => (
+  <WrapperInput
+    type={type}
+    placeholder={placeholder}
+    width={width}
+  />
+);
 
 Input.propTypes = {
-    type: string,
-    placeholder: string,
-}
+  type: string,
+  placeholder: string,
+  width: string,
+};
 Input.defaultProps = {
-    type: '',
-    placeholder: '',
-}
+  type: '',
+  placeholder: '',
+  width: '420px',
+};
+
+export default Input;

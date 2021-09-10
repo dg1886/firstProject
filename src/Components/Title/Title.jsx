@@ -1,18 +1,25 @@
-import React from 'react'
-import {TitleWrapper} from "./styled";
-import {string} from 'prop-types'
+import React from 'react';
+import { string } from 'prop-types';
+import { TitleWrapper } from './styled';
 
-export const Title = ({color, fontSize, text}) => {
-  return <TitleWrapper color={color} fontSize={fontSize}>{text}</TitleWrapper>
-}
+const Title = ({ color, fontSize, text }) => (
+  <TitleWrapper
+    color={color}
+    fontSize={fontSize}
+  >
+    {text}
+  </TitleWrapper>
+);
 
 Title.propTypes = {
   color: string,
   fontSize: string,
-  text: string
-}
+  text: string,
+};
 Title.defaultProps = {
   color: '#282626',
   fontSize: '',
-  text: 'Registration'
-}
+  text: 'Registration',
+};
+
+export default Title;
