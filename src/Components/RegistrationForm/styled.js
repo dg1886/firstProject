@@ -21,3 +21,12 @@ export const FormWrapper = styled.form`
     justify-content: space-evenly;
     align-items: center;
 `;
+
+export const InputsWrapper = styled.div`
+    width: 60%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+`;

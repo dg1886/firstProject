@@ -1,16 +1,16 @@
 import React from 'react';
 import { string } from 'prop-types';
-import { WrapperInput, Wrapper } from './styled';
+import { WrapperInput } from './styled';
 
 const Input = ({
   type, placeholder, width, height,
 }) => (
-  <Wrapper width={width} height={height}>
-    <WrapperInput
-      type={type}
-      placeholder={placeholder}
-    />
-  </Wrapper>
+  <WrapperInput
+    width={width}
+    height={height}
+    type={type}
+    placeholder={placeholder}
+  />
 );
 
 Input.propTypes = {
@@ -23,7 +23,7 @@ Input.defaultProps = {
   type: '',
   placeholder: '',
   width: '100%',
-  height: '',
+  height: '63px',
 };
 
 export default Input;

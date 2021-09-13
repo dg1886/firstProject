@@ -14,7 +14,7 @@ export const WrapperButton = styled.button`
   font-style: normal;
   font-size: 1.4em;
   letter-spacing: 0.05em;
-  font-family: 'Lato';
+  font-family: 'Lato-Bold';
   font-style: normal;
   font-weight: 700;
   &:hover {
