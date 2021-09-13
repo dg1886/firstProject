@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const WrapperInput = styled.input`
-  width: ${({ width }) => width};
+  width: 100%;
   height: 63px;
   box-sizing: border-box;
   border-radius: 8px;
@@ -13,4 +13,9 @@ export const WrapperInput = styled.input`
   font-weight: normal;
   letter-spacing: 0.05em;
   padding-left: 10px;
+`;
+
+export const Wrapper = styled.div`
+  width: ${(p) => p.width};
+  height: ${(p) => p.height};
 `;
