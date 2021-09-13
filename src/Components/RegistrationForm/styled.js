@@ -21,7 +21,3 @@ export const FormAreaWrapper = styled.div`
   justify-content: space-evenly;
   align-items: center;
 `;
-
-export const DivWrapper = styled.div`
-  width: ${(p) => p.width};
-`;

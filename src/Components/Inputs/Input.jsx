@@ -18,7 +18,7 @@ Input.propTypes = {
 Input.defaultProps = {
   type: '',
   placeholder: '',
-  width: '420px',
+  width: '',
 };
 
 export default Input;

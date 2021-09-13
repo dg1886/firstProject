@@ -12,9 +12,11 @@ export const WrapperButton = styled.button`
   border: none;
   color: ${({ color }) => color};
   font-style: normal;
-  font-weight: 500;
   font-size: 1.4em;
   letter-spacing: 0.05em;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
   &:hover {
     -webkit-box-shadow: 0px 0px 3px rgba(74, 72, 72, 0);
   }
