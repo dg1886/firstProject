@@ -1,0 +1,12 @@
+{
+        "extends": ["react-app", "airbnb", "plugin:jsx-a11y/recommended"],
+        "plugins": ["jsx-a11y"],
+        "rules": {
+                "jsx-a11y/label-has-associated-control":"off",
+                "import/prefer-default-export": [0],
+                "react-hooks/exhaustive-deps": [0],
+                "import/no-unresolved": [0],
+                "import/no-named-as-default": 0,
+                "linebreak-style":"off"
+        }
+}
