@@ -1,11 +1,10 @@
 import React from 'react';
-
-import RegistrationForm from './Components/RegistrationForm/Form';
+import AuthPage from './Containers/Auth';
 
 function App() {
   return (
     <div className="App">
-      <RegistrationForm />
+      <AuthPage />
     </div>
   );
 }
