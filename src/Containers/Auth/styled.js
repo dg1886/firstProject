@@ -34,16 +34,20 @@ export const Tab = styled.button`
   opacity: 0.6;
   background: white;
   border: 0;
-  border-radius: 8px 0px 0px 0px;
   outline: 0;
   ${({ active }) => active
   && `
     border-bottom: 2px solid #006162;
     opacity: 1;
-    border-radius: 8px 0px 0px 0px;
   `}
   font-family: 'Lato-Bold';
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
+  &:first-child{
+    border-top-left-radius: 8px;
+  }
+  &:last-child{
+    border-top-right-radius: 8px;
+  }
 `;
