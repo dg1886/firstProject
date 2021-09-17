@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormWrapper } from './styled';
+import { ErrorText, FormWrapper } from './styled';
 import Button from '../Button';
 import Input from '../Inputs/Input';
 import Title from '../Title/Title';
@@ -21,7 +21,7 @@ const RegistrationForm = () => {
         value={values.email}
         onChange={handleChange}
       />
-      {errors.email && <p>{errors.email}</p>}
+      {errors.email && <ErrorText>{errors.email}</ErrorText>}
       <Input
         name="password"
         type="password"
@@ -29,7 +29,7 @@ const RegistrationForm = () => {
         value={values.password}
         onChange={handleChange}
       />
-      {errors.password && <p>{errors.password}</p>}
+      {errors.password && <ErrorText>{errors.password}</ErrorText>}
       <Input
         name="password2"
         type="password"
@@ -37,7 +37,7 @@ const RegistrationForm = () => {
         value={values.password2}
         onChange={handleChange}
       />
-      {errors.password2 && <p>{errors.password2}</p>}
+      {errors.password2 && <ErrorText>{errors.password2}</ErrorText>}
       <Button disabled={isInvalidForm} type="submit" width="300px" backgroundColor="#006162" color="#f4f9f9" />
     </FormWrapper>
   );

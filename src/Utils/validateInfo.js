@@ -1,25 +1,44 @@
-export default function validateInfo(values, name) {
-  const errors = {};
-  console.log(name);
-  if (values.email) {
-    console.log(1);
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-      errors.email = 'Email address is invalid';
-    }
-  } else errors.email = 'Email required';
+const EMAIL = 'email';
+const PASSWORD = 'password';
+const CONFIRM_PASSWORD = 'password2';
 
-  if (values.password) {
-    console.log(2);
-    if (values.password.length < 5) {
-      errors.password = 'Password needs to be 5 characters or more';
-    }
-  } else errors.password = 'Password is required';
+const isEmptyField = (str) => !str.length;
 
-  if (values.password2) {
-    console.log(3);
-    if (values.password2 !== values.password) {
-      errors.password2 = 'Passwords do not match';
-    }
-  } else errors.password2 = 'Password is required';
-  return errors;
+const isValidEmail = (str) => !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(str);
+
+const isPasswordLength = (str) => str.length < 5;
+
+const isPasswordMatch = (pass, confPass) => pass !== confPass;
+
+export default function validateInfo(value, name, { password }) {
+  switch (name) {
+    case EMAIL:
+      if (isEmptyField(value)) {
+        return 'Email required';
+      }
+      if (isValidEmail(value)) {
+        return 'Email address is invalid';
+      }
+      return false;
+
+    case PASSWORD:
+      if (isEmptyField(value)) {
+        return 'Password is required';
+      }
+      if (isPasswordLength(value)) {
+        return 'Password needs to be 5 characters or more';
+      }
+      return false;
+
+    case CONFIRM_PASSWORD:
+      if (isEmptyField(value)) {
+        return 'Confirm password is required';
+      }
+      if (isPasswordMatch(password, value)) {
+        return 'Passwords do not match';
+      }
+      return false;
+
+    default: return false;
+  }
 }

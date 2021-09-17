@@ -10,17 +10,22 @@ const useForm = (validate) => {
       ...values,
       [name]: value,
     };
-    const newErrors = validate(newValues, name);
+    const isInvalidField = validate(value, name, newValues);
 
-    setValues(newValues);
+    const newErrors = {
+      ...errors,
+      [name]: isInvalidField,
+    };
+
     setErrors(newErrors);
     setIsInvalidForm(!!Object.keys(newErrors).length);
+    setValues(newValues);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(e);
-    setErrors(validate(values));
+    // setErrors(validate(values));
   };
 
   return {
