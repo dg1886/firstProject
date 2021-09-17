@@ -9,13 +9,8 @@ const RegistrationForm = () => {
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(e);
-    console.log('email:', email);
-    console.log('password:', password);
-    console.log('password2:', password2);
-    // setErrors(validate(values));
+  const handleSubmit = () => {
+
   };
 
   return (
