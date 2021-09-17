@@ -1,44 +1,48 @@
-import React from 'react';
-import { ErrorText, FormWrapper } from './styled';
+import React, { useState } from 'react';
 import Button from '../Button';
 import Input from '../Inputs/Input';
 import Title from '../Title/Title';
-import useForm from '../../Utils/useForm';
-import validate from '../../Utils/validateInfo';
+import { FormWrapper } from './styled';
 
 const RegistrationForm = () => {
-  const {
-    handleChange, handleSubmit, values, errors, isInvalidForm,
-  } = useForm(validate);
-  console.log(errors);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [password2, setPassword2] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e);
+    console.log('email:', email);
+    console.log('password:', password);
+    console.log('password2:', password2);
+    // setErrors(validate(values));
+  };
+
   return (
-    <FormWrapper onSubmit={handleSubmit} noValidate>
+    <FormWrapper onSubmit={handleSubmit}>
       <Title fontSize="35px" />
       <Input
         name="email"
         type="email"
         placeholder="Email"
-        value={values.email}
-        onChange={handleChange}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
       />
-      {errors.email && <ErrorText>{errors.email}</ErrorText>}
       <Input
         name="password"
         type="password"
         placeholder="Password"
-        value={values.password}
-        onChange={handleChange}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
-      {errors.password && <ErrorText>{errors.password}</ErrorText>}
       <Input
         name="password2"
         type="password"
         placeholder="Confirm password"
-        value={values.password2}
-        onChange={handleChange}
+        value={password2}
+        onChange={(e) => setPassword2(e.target.value)}
       />
-      {errors.password2 && <ErrorText>{errors.password2}</ErrorText>}
-      <Button disabled={isInvalidForm} type="submit" width="300px" backgroundColor="#006162" color="#f4f9f9" />
+      <Button type="submit" width="300px" backgroundColor="#006162" color="#f4f9f9" />
     </FormWrapper>
   );
 };

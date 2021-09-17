@@ -1,17 +1,21 @@
-import React from 'react';
-import { FormWrapper } from './styled';
+import React, { useState } from 'react';
 import Button from '../Button';
 import Input from '../Inputs/Input';
 import Title from '../Title/Title';
-import useForm from '../../Utils/useForm';
-import validate from '../../Utils/validateInfo';
-import { ErrorText } from '../RegistrationForm/styled';
+import { FormWrapper } from './styled';
 
 const LoginForm = () => {
-  const {
-    handleChange, handleSubmit, values, errors, isInvalidForm,
-  } = useForm(validate);
-  console.log(values);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e);
+    console.log('email:', email);
+    console.log('password:', password);
+    // setErrors(validate(values));
+  };
+
   return (
     <FormWrapper onSubmit={handleSubmit}>
       <Title text="Login" fontSize="35px" />
@@ -19,19 +23,17 @@ const LoginForm = () => {
         name="email"
         type="email"
         placeholder="Email"
-        value={values.email}
-        onChange={handleChange}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
       />
-      {errors.email && <ErrorText>{errors.email}</ErrorText>}
       <Input
         name="password"
         type="password"
         placeholder="Password"
-        value={values.email}
-        onChange={handleChange}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
-      {errors.password && <ErrorText>{errors.password}</ErrorText>}
-      <Button disabled={isInvalidForm} type="submit" text="Login" width="300px" backgroundColor="#006162" color="#f4f9f9" />
+      <Button type="submit" text="Login" width="300px" backgroundColor="#006162" color="#f4f9f9" />
     </FormWrapper>
   );
 };
