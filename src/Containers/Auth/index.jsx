@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { func } from 'prop-types';
 import LoginForm from '../../Components/LoginForm';
 import RegistrationForm from '../../Components/RegistrationForm';
 import {
@@ -8,7 +9,7 @@ import {
 
 const types = ['Log In', 'Registration'];
 
-const AuthPage = () => {
+const AuthPage = ({ setAuthDone }) => {
   const [active, setActive] = useState(types[0]);
 
   return (
@@ -26,11 +27,17 @@ const AuthPage = () => {
               </Tab>
             ))}
           </Header>
-          {active === 'Log In' ? <LoginForm /> : <RegistrationForm />}
+          {active === 'Log In' ? <LoginForm setAuthDone={setAuthDone} /> : <RegistrationForm setAuthDone={setAuthDone} />}
         </Container>
       </PageWrapper>
     </>
   );
 };
 
+AuthPage.propTypes = {
+  setAuthDone: func,
+};
+AuthPage.defaultProps = {
+  setAuthDone: () => {},
+};
 export default AuthPage;

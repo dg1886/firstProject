@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import Button from '../Button';
 import Input from '../Inputs/Input';
 import Title from '../Title/Title';
@@ -8,9 +9,11 @@ const RegistrationForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
-
+  const history = useHistory();
   const handleSubmit = () => {
-
+    if (email && password && password2) {
+      history.push('/');
+    }
   };
 
   return (
